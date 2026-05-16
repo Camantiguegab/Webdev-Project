@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Rollers Lifestyle | The Arena</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        :root {
+            --accent: #ffffff;
+            --dark-glass: rgba(10, 10, 10, 0.9);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        *{
+            box-sizing:border-box;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            margin: 0;
+            color: #ffffff;
+            background-color: #000000;
+            background-image:
+            linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+            url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+
+            line-height: 1.6;
+            text-transform: uppercase;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+
+        header {
+            padding: 100px 20px 60px;
+            text-align: center;
+
+            background-image:
+            linear-gradient(to bottom,
+            rgba(0,0,0,0.4) 0%,
+            rgba(0,0,0,0.95) 100%),
+
+            url('https://scontent.fmnl9-7.fna.fbcdn.net/v/t1.6435-9/108211779_155258002830297_1888384815964720705_n.png?_nc_cat=104&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeHJw5dcvZxtoUC-gjTb1aKZiasbXJyIodOJqxtcnIih01AAoJW-B-YdWna3_duRStzsCTemFwpnOZSWJVigCy_q&_nc_ohc=4L_D6OhuU-sQ7kNvwFWpQ2W&_nc_oc=Adqs4VrxLDyJM3jVMFvDoxYU6h09t6MMpyBrzxKi7vZPtYBLotdGFWepxmH-p9VN_bA&_nc_zt=23&_nc_ht=scontent.fmnl9-7.fna&_nc_gid=F5GZRsLwXTy7TmrfS3QCVA&_nc_ss=7b2a8&oh=00_Af5CJYAWtqlBTZEbxHCewXuh07Q9q4bFbyTzwjGeZnbFOA&oe=6A25771F');
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .main-logo {
+            max-width: 600px;
+            width: 90%;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(255,255,255,0.1));
+        }
+
+        header h1{
+            font-family:'Bebas Neue', sans-serif;
+            font-size:5rem;
+            letter-spacing:5px;
+            margin:0;
+        }
+
+        nav {
+            background: var(--dark-glass);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            padding: 25px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #888;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #fff;
+        }
+        /* PAGE CONTENT */
+
+        .page-content {
+            display: none;
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 50px;
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            margin: 0 0 25px 0;
+            letter-spacing: 2px;
+        }
+
+        p{
+            color:#bbb;
+            font-size:1rem;
+        }
+
+        .visual-img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border: 1px solid #222;
+            margin-bottom: 30px;
+        }
+
+        /* APPAREL */
+
+        .apparel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #222;
+            transition:0.4s;
+        }
+
+        .product-card:hover{
+            transform:translateY(-8px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background: #111;
+            margin-bottom: 15px;
+        }
+
+        /* TABLE */
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th {
+            text-align: left;
+            padding: 20px;
+            background: #111;
+            border-bottom: 2px solid #333;
+        }
+
+        .schedule-table td {
+            padding: 20px;
+            border-bottom: 1px solid #111;
+            color: #aaa;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: #fff;
+            color: #000 !important;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 30px;
+            letter-spacing: 4px;
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #fff !important;
+            border: 1px solid #fff;
+        }
+
+        .contact-fab {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 100;
+        }
+
+        .fab-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px 18px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            border: 1px solid var(--border);
+            transition: 0.3s;
+        }
+
+        .fab-item:hover {
+            transform: translateX(-10px);
+            background: #fff;
+            color: #000;
+        }
+
+        footer{
+            text-align:center;
+            padding:40px;
+            color:#666;
+            border-top:1px solid #111;
+            margin-top:50px;
+        }
+
+        @media(max-width:768px){
+
+            h2{
+                font-size:2.5rem;
+            }
+
+            nav a{
+                display:inline-block;
+                margin:10px;
+            }
+
+            .card{
+                padding:30px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+     <!-- HEADER -->
+
+    <header>
+
+        <h1>HIGH ROLLERS</h1>
+
+        <p style="letter-spacing: 12px; color: #bbb; font-weight: 700; margin-top: 20px;">
+            LIFESTYLE • MMA • FITNESS
+        </p>
+
+    </header>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+    <a onclick="showPage('disciplines', this)" class="active">
+        DISCIPLINES
+    </a>
+
+    <a onclick="showPage('vision', this)">
+        VISION
+    </a>
+
+    <a onclick="showPage('why-join', this)">
+        WHY JOIN
+    </a>
+
+    <a onclick="showPage('events', this)">
+        EVENTS
+    </a>
+
+    <a onclick="showPage('apparel', this)">
+        APPAREL
+    </a>
+
+    <a onclick="showPage('contact', this)">
+        CONTACT
+    </a>
+
+</nav>
+
+   <!-- DISCIPLINES -->
+
+<section id="disciplines" class="page-content active">
+
+    <div class="card">
+
+        <img
+        src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1600&auto=format&fit=crop"
+        class="visual-img">
+
+        <h2>COMBAT DISCIPLINES</h2>
+
+        <p>
+            High Rollers Lifestyle is built for warriors. Our culture combines
+            MMA, Muay Thai, Boxing, Strength Training, and Streetwear Fashion.
+            Every athlete represents discipline, confidence, and resilience.
+        </p>
+
+        <a href="#" class="btn">
+            <i class="fas fa-dumbbell"></i>
+            TRAIN NOW
+        </a>
+
+    </div>
+
+</section>
+
+<!-- VISION SECTION -->
+
+<section id="vision" class="page-content">
+
+    <div class="card">
+
+        <img
+        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop"
+        class="visual-img">
+
+        <h2>OUR VISION</h2>
+
+        <p>
+            Highrollers Lifestyle is a combat sportswear brand built for athletes, 
+            fighters, and individuals who live with discipline, strength, and confidence. 
+            The vision of the brand is to unite the spirit of combat sports 
+            with modern streetwear culture by creating high-quality apparel that represents power, 
+            resilience, and ambition. From training sessions to major fight events
+        </p>
+
+        <p>
+            Highrollers Lifestyle promotes a community where passion, hard work, and determination define success.
+            Through premium sportswear, bold designs, and competitive events, the brand aims to inspire fighters and 
+            supporters to embrace the warrior mindset and live the Highrollers Lifestyle both inside and outside the ring.
+
+        </p>
+
+        <a href="#" class="btn">
+            <i class="fas fa-fire"></i>
+            JOIN THE MOVEMENT
+        </a>
+
+    </div>
+
+</section>
+
+<!-- WHY JOIN -->
+
+
+    <section id="why-join" class="page-content">
+
+        <div class="card">
+
+            <h2>WHY JOIN HIGH ROLLERS?</h2>
+
+            <p>
+                We are more than a sportswear brand. High Rollers Lifestyle is a
+                movement for fighters, athletes, and individuals who embrace hard
+                work and ambition. Our community promotes strength, loyalty,
+                brotherhood, and elite performance.
+            </p>
+
+            <p>
+                From premium apparel to combat sports events, we create a lifestyle
+                that inspires people to live boldly both inside and outside the ring.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- EVENTS -->
+
+    <section id="events" class="page-content">
+
+        <div class="card">
+
+            <h2>UPCOMING EVENTS</h2>
+
+            <table class="schedule-table">
+
+                <tr>
+                    <th>EVENT</th>
+                    <th>LOCATION</th>
+                    <th>DATE</th>
+                </tr>
+
+                <tr>
+                    <td>HIGH ROLLERS FIGHT NIGHT</td>
+                    <td>QUEZON CITY</td>
+                    <td>JUNE 14</td>
+                </tr>
+
+                <tr>
+                    <td>ELITE MUAY THAI CAMP</td>
+                    <td>MANILA</td>
+                    <td>JULY 02</td>
+                </tr>
+
+                <tr>
+                    <td>MMA SPARRING SESSION</td>
+                    <td>PASIG</td>
+                    <td>AUGUST 10</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- APPAREL -->
+
+    <section id="apparel" class="page-content">
+
+        <div class="card">
+
+            <h2>HIGH ROLLERS APPAREL</h2>
+
+            <div class="apparel-grid">
+
+                <div class="product-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+                    class="product-img">
+
+                    <h3>FIGHT CLUB SHIRT</h3>
+
+                    <p>PREMIUM PERFORMANCE WEAR</p>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop"
+                    class="product-img">
+
+                    <h3>HIGH ROLLERS HOODIE</h3>
+
+                    <p>URBAN STREET COMBAT STYLE</p>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img
+                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
+                    class="product-img">
+
+                    <h3>TRAINING SHORTS</h3>
+
+                    <p>LIGHTWEIGHT ATHLETIC DESIGN</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="page-content">
+
+        <div class="card">
+
+            <h2>CONTACT US</h2>
+
+            <p>
+                FOLLOW HIGH ROLLERS LIFESTYLE FOR NEW DROPS,
+                EVENTS, AND TRAINING CAMPS.
+            </p>
+<a href="#" class="btn">
+                <i class="fab fa-instagram"></i>
+                INSTAGRAM
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FLOATING CONTACT -->
+
+    <div class="contact-fab">
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-facebook"></i> FACEBOOK
+        </a>
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-instagram"></i> INSTAGRAM
+        </a>
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-tiktok"></i> TIKTOK
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 HIGH ROLLERS LIFESTYLE • ALL RIGHTS RESERVED
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showPage(pageId, element) {
+
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+        }
+
+    </script>
+
+</body>
+</html>
+<p>PREMIUM PERFORMANCE WEAR</p>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img
+                    src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-6/473078773_1179812970374790_7074540936729186897_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=06a7ca&_nc_eui2=AeFw4ohKxN2fU6lZ8oMFGXYFQTMTlLa9l4BBMxOUtr2XgGQFFJYN2i2mT-W0KCbz5n7ijQ4Wvykq1gN7KyZ4PzTc&_nc_ohc=cgiWEquWte8Q7kNvwHR2DMU&_nc_oc=AdoIfJpAnMZO52rK6eDK_JGAUkjARZSG6QH-5lkCF_LnhdL4rIk0gVvv5nWZufZ4f-o&_nc_zt=23&_nc_ht=scontent.fmnl9-4.fna&_nc_gid=tQf6f66pUzC6OYPPPrn9GA&_nc_ss=7b2a8&oh=00_Af66giUSXzI91IIkKPzKjW9yMW7353ZthUv7bdnvqRwQ-g&oe=6A03DAF7"
+                    class="product-img">
+
+                    <h3>HIGH ROLLERS T-SHIRT</h3>
+
+                    <p>URBAN STREET CASUAL STYLE</p>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img
+                    src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t39.30808-6/481079521_1277127634412834_3228297569492054265_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGo2mZ2_l8eUyTNXebxQGkb0QVWdtfTWzbRBVZ219NbNtCerPSy4zLBa8dUitFtBqyUPQMVkpnCmxHZNnbXRUOn&_nc_ohc=oqCf0p8ji4AQ7kNvwGyxLBG&_nc_oc=AdqKoB1ZVWEovi37fe-vJetoOQcScOuHmCyNkEb08PZn9bfz7UBWV1YMRo_DQUOHwoE&_nc_zt=23&_nc_ht=scontent.fmnl9-2.fna&_nc_gid=SvX6pnY0KSq1GtXJe_GvyA&_nc_ss=7b2a8&oh=00_Af5_6tmP2BZa0AtmFBiKVhKeL90qIEmk4qXc0WfAN63Njw&oe=6A03E76C"
+                    class="product-img">
+
+                    <h3>TRAINING SHORTS</h3>
+
+                    <p>LIGHTWEIGHT ATHLETIC DESIGN</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="page-content">
+
+        <div class="card">
+
+            <h2>CONTACT US</h2>
+
+            <p>
+                FOLLOW HIGH ROLLERS LIFESTYLE FOR NEW DROPS,
+                EVENTS, AND TRAINING CAMPS.
+            </p>
+
+            <a href="#" class="btn">
+                <i class="fab fa-instagram"></i>
+                INSTAGRAM
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FLOATING CONTACT -->
+
+    <div class="contact-fab">
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-facebook"></i> FACEBOOK
+        </a>
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-instagram"></i> INSTAGRAM
+        </a>
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-tiktok"></i> TIKTOK
+        </a>
+
+    </div>
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 HIGH ROLLERS LIFESTYLE • ALL RIGHTS RESERVED
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showPage(pageId, element) {
+
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+        }
+
+    </script>
+
+</body>
+</html>
+<p>PREMIUM PERFORMANCE WEAR</p>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img
+                    src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t39.30808-6/473078773_1179812970374790_7074540936729186897_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=06a7ca&_nc_eui2=AeFw4ohKxN2fU6lZ8oMFGXYFQTMTlLa9l4BBMxOUtr2XgGQFFJYN2i2mT-W0KCbz5n7ijQ4Wvykq1gN7KyZ4PzTc&_nc_ohc=cgiWEquWte8Q7kNvwHR2DMU&_nc_oc=AdoIfJpAnMZO52rK6eDK_JGAUkjARZSG6QH-5lkCF_LnhdL4rIk0gVvv5nWZufZ4f-o&_nc_zt=23&_nc_ht=scontent.fmnl9-4.fna&_nc_gid=tQf6f66pUzC6OYPPPrn9GA&_nc_ss=7b2a8&oh=00_Af66giUSXzI91IIkKPzKjW9yMW7353ZthUv7bdnvqRwQ-g&oe=6A03DAF7"
+                    class="product-img">
+
+                    <h3>HIGH ROLLERS T-SHIRT</h3>
+
+                    <p>URBAN STREET CASUAL STYLE</p>
+
+                </div>
+
+                <div class="product-card">
+
+                    <img
+                    src="https://scontent.fmnl9-2.fna.fbcdn.net/v/t39.30808-6/481079521_1277127634412834_3228297569492054265_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeGo2mZ2_l8eUyTNXebxQGkb0QVWdtfTWzbRBVZ219NbNtCerPSy4zLBa8dUitFtBqyUPQMVkpnCmxHZNnbXRUOn&_nc_ohc=oqCf0p8ji4AQ7kNvwGyxLBG&_nc_oc=AdqKoB1ZVWEovi37fe-vJetoOQcScOuHmCyNkEb08PZn9bfz7UBWV1YMRo_DQUOHwoE&_nc_zt=23&_nc_ht=scontent.fmnl9-2.fna&_nc_gid=SvX6pnY0KSq1GtXJe_GvyA&_nc_ss=7b2a8&oh=00_Af5_6tmP2BZa0AtmFBiKVhKeL90qIEmk4qXc0WfAN63Njw&oe=6A03E76C"
+                    class="product-img">
+
+                    <h3>TRAINING SHORTS</h3>
+
+                    <p>LIGHTWEIGHT ATHLETIC DESIGN</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="page-content">
+
+        <div class="card">
+
+            <h2>CONTACT US</h2>
+
+            <p>
+                FOLLOW HIGH ROLLERS LIFESTYLE FOR NEW DROPS,
+                EVENTS, AND TRAINING CAMPS.
+            </p>
+
+            <a href="#" class="btn">
+                <i class="fab fa-instagram"></i>
+                INSTAGRAM
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- FLOATING CONTACT -->
+
+    <div class="contact-fab">
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-facebook"></i> FACEBOOK
+        </a>
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-instagram"></i> INSTAGRAM
+        </a>
+
+        <a href="#" class="fab-item">
+            <i class="fab fa-tiktok"></i> TIKTOK
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 HIGH ROLLERS LIFESTYLE • ALL RIGHTS RESERVED
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showPage(pageId, element) {
+
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            document.getElementById(pageId).classList.add('active');
+
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+        }
+
+    </script>
+
+</body>
+</html>
